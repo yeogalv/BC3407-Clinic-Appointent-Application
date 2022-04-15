@@ -29,7 +29,6 @@ app = Flask(__name__)
 app.secret_key = 'hello'
 app.config["SESSION_PERMANENT"] = True
 app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
 
 # Create a function that runs before every request to store the user-id provided by the user during the log in
 # session as object g.user
