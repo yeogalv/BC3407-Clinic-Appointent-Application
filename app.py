@@ -6,7 +6,8 @@ import csv
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Use patientid 65672 for best demo.
+# Use patientid and password 9301 for best demo.
+# Use Staff ID password 160590 for demo
 
 # Create a User Class that contains patient ID and Password to match.
 class User:
