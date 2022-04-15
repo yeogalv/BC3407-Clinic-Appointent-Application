@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Results</title>
+    <link rel="stylesheet" type = "text/css" href="static/appstyle.css">
+</head>
+<body>
+
+<div class = "topbar">
+    <img style="max-height: 90px; width: 100px" src="static/image/hosp_logo.png" id="logo">
+    <a  href = "/doctor" class="btn">Staff Homepage</a>
+    <a  href = "/dashboard-home" class="btn">Dashboard</a> <!-- This will include Dashboard Later-->
+    <a  href = "/KPI" class="btn">KPI</a>
+    <a  href = "/schedule" class="btn">Schedule</a>
+    <a  href = "/search" class="btn">Search</a>
+    <a  href = "/filter" class="btn">Top No Shows</a>
+    <a  href = "/" id="logout" class="btn"> Log Out </a>
+</div>
+<div class="middle">
+    <h4 class = "headerstyle"> Top {{ limit }} patients with at least {{ threshold }} no shows </h4>
+    {{data | safe}}
+</div>
+
+</body>
+</html>

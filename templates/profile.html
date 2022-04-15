@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Profile</title>
+    <link rel="stylesheet" type = "text/css" href="/static/appstyle.css">
+</head>
+<body>
+
+<div class = "topbar">
+    <img style="max-height: 90px; width: 100px" src="static/image/hosp_logo.png" id="logo">
+    <a  href = "/patient" class="btn">Patient Homepage</a>
+    <a  href = "/profile" class="btn">My Dashboard</a> <!-- This will include Dashboard Later-->
+    <a  href = "/appointment" class="btn">New Appointment</a>
+    <a  href = "/logout" id="logout" class="btn"> Log Out </a>
+</div>
+<div class="middle">
+    <form action="http://127.0.0.1:5000/profile" method ="GET">
+<br>
+    {% if diff > 0 %}
+        <div class="fixedBox">You are <strong><u>{{ diff }}%</u></strong> higher than the average no-show rate.
+            <br>
+            <br>Try to keep to your appointment dates to avoid a bad credit rating!<br/></div>
+
+    {% else %}
+        <div class="fixedBox">You are <strong><u>{{ -diff }}%</u></strong> lower than the average no-show rate.
+            <br>
+            <br>Keep up the good work, and we look forward to seeing you at your next appointment!<br/></div>
+    {% endif %}
+<br>
+    <h4 class = "headerstyle">Your Past Appointments</h4>
+        {{ data2 | safe }}
+    <br>
+    <h4 class = "headerstyle">Your Missed Appointments</h4>
+        {% if notimes==0 %}
+            <br> Good job! You have not missed any of your appointments!
+            <br>
+        {% else %}
+            {{ data1 | safe }}
+        {% endif %}
+<br>
+        <div class="textbox"> You have missed your appointment <strong><u>{{ notimes }}</u></strong> time(s) so far.</div>
+    <br>
+        <p><img src="/static/image/plot.jpg" class="center"></p>
+        <p class="center">Patient {{ id }} no-show rate vs the average no-show rate of the hospital. </p>
+    </form>
+</div>
+
+</body>
+</html>

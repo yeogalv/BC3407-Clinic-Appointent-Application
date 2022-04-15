@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtering Top No-Shows</title>
+    <link rel="stylesheet" type = "text/css" href="static/appstyle.css">
+</head>
+<body>
+
+<div class = "topbar">
+    <img style="max-height: 90px; width: 100px" src="static/image/hosp_logo.png" id="logo">
+    <a  href = "/doctor" class="btn">Staff Homepage</a>
+    <a  href = "/dashboard-home" class="btn">Dashboard</a> <!-- This will include Dashboard Later-->
+    <a  href = "/KPI" class="btn">KPI</a>
+    <a  href = "/schedule" class="btn">Schedule</a>
+    <a  href = "/search" class="btn">Search</a>
+    <a  href = "/filter" class="btn">Top No Shows</a>
+    <a  href = "/" id="logout" class="btn"> Log Out </a>
+</div>
+
+</br>
+<div class="middle">
+
+<form action="" method="POST">
+<table>
+    <tr>
+        <td>Enter the threshold of no-shows</td>
+        <td><input type="text" name="threshold"></td>
+    </tr>
+    <tr>
+        <td>Enter the number of patients you want to see</td>
+        <td><input type="text" name="limit"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="submit">Submit</button></td>
+    </tr>
+</table>
+
+    {%  if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+</div>
+</body>
+</html>

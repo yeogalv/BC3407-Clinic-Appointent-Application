@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Appointments</title>
+    <link rel="stylesheet" type = "text/css" href="static/appstyle.css">
+</head>
+<body>
+<div class = "topbar">
+    <img style="max-height: 90px; width: 100px" src="static/image/hosp_logo.png" id="logo">
+    <a  href = "/patient" class="btn">Patient Homepage</a>
+    <a  href = "/profile" class="btn">My Dashboard</a> <!-- This will include Dashboard Later-->
+    <a  href = "/appointment" class="btn">New Appointment</a>
+    <a  href = "/logout" id="logout" class="btn"> Log Out </a>
+</div></br>
+<div class ="middle">
+    <p class="systime"> Today's Date: {{ tdate }}</p>
+<br>
+    <p class = "welcome">Welcome to Clinic's Appointment System, Patient {{ id }}</p>
+<br>
+    <p class="textbox">{{ dayleft }} <br> Days Left To your Next Appointment!</p>
+    <h4 class = "headerstyle">Your Upcoming Appointments</h4>
+    {{data | safe}}
+    {% if ntype == "action" %}
+        <h4 class = "headerstyle">Actions For Next Appointment: No. {{ nextappt }}</h4>
+        <p></br>Please be considerate and do not hog appointment slots.</p>
+        <p>Give those who need it more and do your part for our frontline staff!</p>
+        <p style="font-style: italic; ">Note: Appointments will be cancelled automatically if not confirmed by 72 Hours before your appointment.</p>
+        <br>
+        <a href = "/action" class="btn", id="logout">Proceed To Confirm/Cancel/Reschedule Your Next Appointment</a>
+
+    {% else %}
+        <h4 class = "headerstyle"> No Actions For Next Appointment: No. {{ nextappt }}</h4>
+        <p>Thank you for confirming your appointments! Actions are only required for appointments in 3-5 days! Click Below to Make New Appointment or Cancel Future Appoinments</p>
+        <form action="http://127.0.0.1:5000/patient" method ="POST">
+          <label for="ind">Cancel Appointment No:</label>
+          <select name="ind">
+              {% for index in indata %}
+              <option value={{ index }}>{{ index }}</option>
+              {% endfor %}
+          </select>
+          <br><br>
+          <input type="submit" value="Submit">
+        </form></br>
+        <br>
+        <a href = "/appointment" id="logout" class="btn">Make A New Appointment</a>
+    {% endif %}
+</div>
+</body>
+</html>

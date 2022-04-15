@@ -1,0 +1,205 @@
+html{
+  font-family: Helvetica;
+}
+body {
+  margin-top:0;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #ebf2fa;
+
+}
+
+.topbar{
+  background-color: #ebf2fa;
+  font-size: 16px;
+  position: relative;
+  display:flex;
+  width: 100%;
+}
+#logo{
+  padding: 0px 30px;
+}
+
+.container{
+  margin-left: 10px;
+  margin-right:10px;
+  padding: 0px 28px;
+}
+
+.middle{
+  margin-left: 10px;
+  margin-right:10px;
+  padding: 0px 28px;
+}
+
+.welcome{
+  font-family: "Hiragino Kaku Gothic Pro";
+  position: relative;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.systime{
+  position: absolute;
+  font-weight: bold;
+  right: 5%;
+}
+
+a.btn {
+  border: none;
+  padding: 20px 28px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: None;
+  border-radius: 30px;
+  text-align: center;
+  margin: auto;
+  width: 150px;
+}
+#logout{
+  background-color: lightsteelblue;
+}
+#logout.btn:hover {background: #2dd6c0}
+
+
+a.btn:hover {background: #78a5bc;}
+
+a.btn:visited {color: black}
+
+a.btn:link {color: black}
+
+button {
+  border: none;
+  background-color: lightsteelblue;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline;
+  text-decoration: None;
+  padding: 14px 28px;
+}
+
+button:hover {background: #2dd6c0}
+
+button:visited {color: black}
+
+button:link {color: black}
+
+table {
+  border-collapse: collapse;
+  background-color: mistyrose;
+  width: 100% ;
+}
+
+
+th, td {
+  padding: 5px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+
+.textbox {
+  padding: 10px;
+  background-color: indianred;
+  text-align: center;
+  color: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+.fixedBox{
+  padding: 10px;
+  background-color: lightblue;
+  text-align: center;
+  color: black;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  font-size: large;
+}
+
+.headerstyle {
+  padding: 10px;
+  background-color: indianred;
+  text-align: left;
+  color: white;
+  width: 40%;
+}
+
+form{
+  font-family: Helvetica;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.container{
+  position: relative;
+  float: left;
+  width: 30%;
+  margin: 20px auto 0;
+  padding: 5px;
+
+}
+.container:before{
+  content:"";
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: rgba(0,0,0,0);
+}
+
+.container:hover::before{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.container:hover .image{
+  opacity:0.3;
+}
+
+.container img{
+  display: inline-block;
+  transition: .5s ease;
+  width: 30%;
+  min-width: 200px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+}
+
+.container button{
+  position: absolute;
+  text-align: center;
+  left: 50px;
+  bottom: -10px;
+}
+
+.container:hover button{
+  opacity:1
+}
+
+.column{
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  text-align: center;
+}
+
+input{
+  width:20%;
+  height: 30px;
+  text-align: center;
+  font-size: 1em;
+}

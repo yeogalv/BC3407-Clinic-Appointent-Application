@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Action Page</title>
+    <script>
+  // The function below will start the confirmation dialog
+    function confirmAction() {
+        var r = confirm("Are you sure you want to proceed with this action? It is irreversible!");
+        if (r==true) {
+
+        } else {
+          event.preventDefault();
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" type = "text/css" href="static/appstyle.css">
+</head>
+<body>
+<div class = "topbar">
+    <img style="max-height: 90px; width: 100px" src="static/image/hosp_logo.png" id="logo">
+    <a  href = "/patient" class="btn">Patient Homepage</a>
+    <a  href = "/profile" class="btn">My Dashboard</a> <!-- This will include Dashboard Later-->
+    <a  href = "/appointment" class="btn">New Appointment</a>
+    <a  href = "/logout" id="logout" class="btn"> Log Out </a>
+</div>
+<br>
+<div class="middle">
+<p class = "welcome">Welcome to Clinic's Appointment System, Patient {{ id }}</p>
+<br>
+<p> What would you like to do for Appointment No. {{ nextappt }}?</p>
+<p>Click on the following actions to make a decision. </p></div>
+<div class="row">
+    <div class="column">
+        <form action="http://127.0.0.1:5000/action" method ="POST">
+            <div class="middle">
+                <div class ="container">
+                    <img src="https://media.istockphoto.com/photos/healthcare-business-graph-and-medical-examination-and-businessman-picture-id1165046681?k=20&m=1165046681&s=612x612&w=0&h=SrpmV485HlYMO591mH8McP0ZjYYMBkxOpWDGMuq6XRU="
+                    class="image" style="height: 200px; width: 300px">
+                    <button name="action" onclick = confirmAction() type = "submit" value="confirm">Confirm Appointment</button>
+                </div>
+
+                <div class ="container">
+                    <img src="https://saultonline.com/wp-content/uploads/2021/04/healthcare-photos-picture-id954802966.jpg"
+                     class="image" style="height: 200px; width: 300px">
+                    <button name="action" onclick = confirmAction() type = "submit" value="cancel">Cancel Appointment</button>
+                </div>
+
+                <div class ="container">
+                    <img src="https://www.biospectrumasia.com/uploads/articles/1-10342.jpg"
+                    class="image" style="height: 200px; width: 300px">
+                    <button name="action" onclick = confirmAction() type = "submit" value="reschedule">Reschedule Appointment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
