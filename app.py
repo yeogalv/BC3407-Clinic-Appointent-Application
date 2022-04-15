@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from flask import Flask, render_template, g, request, redirect, url_for, session
-from flask_session import Session
 from datetime import date, datetime
 import csv
 import matplotlib.pyplot as plt
@@ -28,9 +27,7 @@ with open("appointmentData_Cleaned.csv", 'r') as fp:
 
 app = Flask(__name__)
 app.secret_key = 'hello'
-app.config["SESSION_PERMANENT"] = True
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+
 
 # Create a function that runs before every request to store the user-id provided by the user during the log in
 # session as object g.user
