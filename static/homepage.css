@@ -3,13 +3,13 @@ html{
 }
 
 body{
-    background-color: #f8f8f8;
+    background-color: #ebf2fa;
     margin-top:0;
     margin-left: 0;
     margin-right: 0;
 }
 .topbar{
-    background-color: #f8f8f8;
+    background-color: #ebf2fa;
     padding:15px;
     position: relative;
     display:flex;
@@ -53,7 +53,7 @@ body{
 }
 
 .image-container {
-    width: 5000%;
+    width: 300%;
     background-color: #f8f8f8;
     height: 460px;
     clear: both;
